@@ -16,7 +16,7 @@
   <main class="app"><header class="header"><div class="logo">📷</div><h1>운영자 QR 스캔</h1><p>참석자의 예약 QR을 카메라 중앙에 맞춰주세요.</p></header><section class="card"><div id="reader"></div><div class="manual"><input id="manual" placeholder="QR 내용 또는 이메일 직접 입력"><button id="manualBtn" class="btn">확인</button></div><div id="status" class="status"><div id="statusIcon" class="icon"></div><h2 id="statusTitle"></h2><p id="person"></p><p id="statusMessage"></p><button id="again" class="btn again">다음 참석자</button></div><p class="hint">카메라 정보와 QR 데이터는 기기 안에서 처리됩니다.</p></section></main>
   <div id="auth" class="auth"><form id="authForm" class="auth-box"><div style="font-size:38px">🔐</div><h2>운영자 인증</h2><p>Code.gs에 설정한 운영자 비밀번호를 입력하세요.</p><input id="password" type="password" autocomplete="current-password" required><div id="authError" class="error-text"></div><button class="btn">스캐너 시작</button></form></div>
   <script>
-    const APPS_SCRIPT_URL='https://script.google.com/macros/s/AKfycbzMXP2o3yypHAcfA3AMaJhdmgmjOrxJnV1Mfk2JA91FhEN7FpWQgGefk9kgmuX4zEXQzg/exec';
+    const APPS_SCRIPT_URL='https://script.google.com/macros/s/AKfycbyqwS9mVi54kolW39sIuT-avVyI9BllS041pHsTw-d_7LHmOcn5Lha3LT2-Ruw3hlKE_g/exec';
     let password='',scanner=null,busy=false,callbackNumber=0;
     const $=id=>document.getElementById(id);
     $('authForm').addEventListener('submit',async event=>{event.preventDefault();password=$('password').value.trim();if(!password)return;$('auth').classList.add('hide');await startScanner()});
